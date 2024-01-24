@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { FaGoogle, FaGithub, FaGithubAlt } from "react-icons/fa";
 
 const SignInSchema = z.object({
 	email: z.string().email("provide your email "),
@@ -54,9 +55,11 @@ const SignInForm = () => {
 			<p className=" badge py-4 mx-auto w-full text-2xl">or</p>
 			<div className=" flex gap-3 justify-center">
 				<button className=" btn capitalize tracking-wider font-semibold w-[170px] text-lg">
+					<FaGoogle />
 					google
 				</button>
 				<button className=" btn capitalize tracking-wider w-[170px] font-semibold text-lg">
+					<FaGithub />
 					github
 				</button>
 			</div>
