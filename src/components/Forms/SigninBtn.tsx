@@ -18,7 +18,7 @@ const SigninBtn = () => {
 				<FaGoogle />
 				google
 			</button>
-			<button
+			{/* <button
 				onClick={() =>
 					signIn("github", {
 						callbackUrl: "/",
@@ -28,7 +28,7 @@ const SigninBtn = () => {
 			>
 				<FaGithub />
 				github
-			</button>
+			</button> */}
 		</div>
 	);
 };

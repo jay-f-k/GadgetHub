@@ -16,9 +16,25 @@ export const authOptions: NextAuthOptions = {
 		}),
 		GitHubProvider({
 			clientId: env.GITHUB_CLIENT_ID,
-			clientSecret: env.GITHUB_CLEINT_SECRET,
+			clientSecret: env.GITHUB_CLIENT_SECRET,
 		}),
 	],
+	secret: env.NEXTAUTH_SECRET,
+	session: {
+		strategy: "jwt",
+	},
+	callbacks: {
+		// async signIn({ user, account, profile }) {
+		// 	console.log(profile);
+		// 	return true;
+		// },
+		async jwt({ token, session }) {
+			return token;
+		},
+		async session({ session, token }) {
+			return session;
+		},
+	},
 	pages: {
 		signIn: "/signIn",
 	},
